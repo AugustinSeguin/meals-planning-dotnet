@@ -1,25 +1,25 @@
 ﻿@page
-@model MealsPlanning.Areas.Ingredients.Pages.IndexModel
+@model MealsPlanning.Areas.Recipes.Pages.IndexModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Liste des ingrédients</h1>
+<h1>Liste des recettes</h1>
 
 <p>
-    <a asp-page="Create">Créer un nouvel ingrédient</a>
+    <a asp-page="Create">Créer une nouvelle recette</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Ingredients[0].Name)
+                @Html.DisplayNameFor(model => model.Recipes[0].Name)
             </th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Ingredients)
+        @foreach (var item in Model.Recipes)
         {
             <tr>
                 <td>
@@ -28,6 +28,7 @@
 
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.Id">Editer</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-page="./Delete" asp-route-id="@item.Id">Supprimer</a>
                 </td>
             </tr>

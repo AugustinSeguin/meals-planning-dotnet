@@ -1,0 +1,28 @@
+@page
+@model MealsPlanning.Areas.Recipes.Pages.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Supprimer</h1>
+
+<h3>Etes vous sûr de vouloir supprimer cette recette ?</h3>
+
+<p class="text-danger">@Model.ErrorMessage</p>
+
+<div>
+    <h4>Recette</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recipe.Name)
+        </dt>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Recipe.Id" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a asp-page="./Index">Retour à la liste des recettes</a>
+    </form>
+</div>

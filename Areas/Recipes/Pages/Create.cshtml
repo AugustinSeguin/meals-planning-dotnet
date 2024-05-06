@@ -1,0 +1,63 @@
+@page
+@model MealsPlanning.Areas.Recipes.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Créer</h1>
+
+<h4>Recettes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+
+            <div class="form-group">
+                <label asp-for="@Model.Recipe.Name" class="control-label"></label>
+                <input asp-for="@Model.Recipe.Name" class="form-control" />
+                <span asp-validation-for="@Model.Recipe.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Recipe.Instructions" class="control-label"></label>
+                <input asp-for="@Model.Recipe.Instructions" class="form-control" />
+                <span asp-validation-for="@Model.Recipe.Instructions" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Recipe.Level" class="control-label"></label>
+                <select name="pets" id="pet-select">
+                    <option value="">--Choisissez une option--</option>
+                    <option value="1">Facile</option>
+                    <option value="2">Moyen</option>
+                    <option value="3">Difficile</option>
+                </select>
+                <span asp-validation-for="@Model.Recipe.Level" class="text-danger"></span>
+            </div>
+
+            @* <div class="form-group">
+                <label asp-for="@Model.Recipe.RecipeIngredient" class="control-label">Ingredients</label>
+                <select name="pets" id="pet-select">
+                    <option value="">--Choisissez une option--</option>
+                    <option value="1">Facile</option>
+                    <option value="2">Moyen</option>
+                    <option value="3">Difficile</option>
+                </select>
+                <span asp-validation-for="@Model.Recipe.RecipeIngredient" class="text-danger"></span>
+            </div> *@
+
+            <div class="form-group">
+                <label asp-for="@Model.Recipe.NbMeals" class="control-label"></label>
+                <input type="number" id="tentacles" asp-for="@Model.Recipe.NbMeals" value="1" min="1" max="10" />
+                <span asp-validation-for="@Model.Recipe.NbMeals" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-2">
+                <input type="submit" value="Créer" class="btn btn-primary" />
+                <a class="btn btn-success" asp-page="Index">Retour à la liste des recettes</a>
+            </div>
+
+        </form>
+    </div>
+</div>

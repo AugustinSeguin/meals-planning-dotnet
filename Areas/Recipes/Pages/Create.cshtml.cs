@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using MealsPlanning.Data;
 using MealsPlanning.Models;
 
-namespace MealsPlanning.Areas.Ingredients.Pages
+namespace MealsPlanning.Areas.Recipes.Pages
 {
     public class CreateModel : PageModel
     {
@@ -21,21 +21,21 @@ namespace MealsPlanning.Areas.Ingredients.Pages
         }
 
         [BindProperty]
-        public Ingredient Ingredient { get; set; } = new Ingredient
+        public Recipe Recipe { get; set; } = new Recipe
         {
             Name = "Name"
         };
 
         public async Task<IActionResult> OnPostAsync()
         {
-            var ingredient = new Ingredient
+            var recipe = new Recipe
             {
                 Name = "Name"
             };
 
-            if (await TryUpdateModelAsync(ingredient, "ingredient", i => i.Name))
+            if (await TryUpdateModelAsync(recipe, "recipe", r => r.Name, r => r.Level, r => r.NbMeals, r => r.Instructions))
             {
-                ctx.Ingredients.Add(ingredient);
+                ctx.Recipes.Add(recipe);
                 await ctx.SaveChangesAsync();
 
                 return RedirectToPage("./Index");

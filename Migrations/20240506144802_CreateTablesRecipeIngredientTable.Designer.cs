@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MealsPlanning.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240506100459_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240506144802_CreateTablesRecipeIngredientTable")]
+    partial class CreateTablesRecipeIngredientTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,7 @@ namespace MealsPlanning.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -48,6 +49,9 @@ namespace MealsPlanning.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Instructions")
+                        .HasColumnType("text");
+
                     b.Property<int>("Level")
                         .HasColumnType("integer");
 
@@ -61,6 +65,58 @@ namespace MealsPlanning.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Recipes");
+                });
+
+            modelBuilder.Entity("MealsPlanning.Models.RecipeIngredient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IngredientId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RecipeId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredientId");
+
+                    b.HasIndex("RecipeId");
+
+                    b.ToTable("RecipeIngredient");
+                });
+
+            modelBuilder.Entity("MealsPlanning.Models.RecipeIngredient", b =>
+                {
+                    b.HasOne("MealsPlanning.Models.Ingredient", "Ingredient")
+                        .WithMany("RecipeIngredient")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MealsPlanning.Models.Recipe", "Recipe")
+                        .WithMany("RecipeIngredient")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ingredient");
+
+                    b.Navigation("Recipe");
+                });
+
+            modelBuilder.Entity("MealsPlanning.Models.Ingredient", b =>
+                {
+                    b.Navigation("RecipeIngredient");
+                });
+
+            modelBuilder.Entity("MealsPlanning.Models.Recipe", b =>
+                {
+                    b.Navigation("RecipeIngredient");
                 });
 #pragma warning restore 612, 618
         }

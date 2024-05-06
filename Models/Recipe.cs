@@ -1,24 +1,30 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MealsPlanning.Models;
 
-enum Level
-{
-    Low,
-    Medium,
-    High
-}
 
 
 public class Recipe
 {
-    public required int Id { get; set; }
+    public enum Levels
+    {
+        Facile,
+        Moyen,
+        Difficile
+    }
 
+    public int Id { get; set; }
+
+    [Display(Name = "Nom")]
     public required String Name { get; set; }
 
-    public required int Level { get; set; }
+    [Display(Name = "Difficulté")]
+    public int Level { get; set; }
+    [Display(Name = "Nombre de repas")]
+    public int NbMeals { get; set; }
 
-    public required int NbMeals { get; set; }
+    public String? Instructions { get; set; }
 
-    // public virtual List<Ingredients>? {get; set;}
-
+    public List<RecipeIngredient>? RecipeIngredient { get; set; }
 }

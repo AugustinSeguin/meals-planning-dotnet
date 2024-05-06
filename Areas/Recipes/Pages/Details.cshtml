@@ -1,0 +1,37 @@
+@page
+@model MealsPlanning.Areas.Recipes.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Recettes</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recipe.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recipe.Instructions)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recipe.Level)
+        </dt>
+        <dd class="col-sm-10">
+           Pour @Html.DisplayFor(model => model.Recipe.NbMeals) repas
+        </dd>
+        @foreach(var recipeIngredient in @Model.Recipe.RecipeIngredient)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => recipeIngredient.Ingredient.Name)
+            </dt>
+        }
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Recipe.Id">Editer</a> |
+    <a asp-page="./Index">Retour à la liste des recettes</a>
+</div>
