@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/loustic/devspace/workspace/dotnet/MealsPlanning/MealsPlanning.csproj": {}
+    "/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/MealsPlanning.csproj": {}
   },
   "projects": {
-    "/home/loustic/devspace/workspace/dotnet/MealsPlanning/MealsPlanning.csproj": {
+    "/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/MealsPlanning.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/loustic/devspace/workspace/dotnet/MealsPlanning/MealsPlanning.csproj",
+        "projectUniqueName": "/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/MealsPlanning.csproj",
         "projectName": "MealsPlanning",
-        "projectPath": "/home/loustic/devspace/workspace/dotnet/MealsPlanning/MealsPlanning.csproj",
+        "projectPath": "/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/MealsPlanning.csproj",
         "packagesPath": "/home/loustic/.nuget/packages/",
-        "outputPath": "/home/loustic/devspace/workspace/dotnet/MealsPlanning/obj/",
+        "outputPath": "/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/loustic/.nuget/NuGet/NuGet.Config"
@@ -43,9 +43,25 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.4, )"
             },

@@ -1,7 +1,15 @@
 
-namespace MealsPlanning.Models.Ingredients;
+namespace MealsPlanning.Models;
 
-public class Ingredients
+enum Level
+{
+    Low,
+    Medium,
+    High
+}
+
+
+public class Recipe
 {
     public required int Id { get; set; }
 
@@ -10,4 +18,7 @@ public class Ingredients
     public required int Level { get; set; }
 
     public required int NbMeals { get; set; }
+
+    // public virtual List<Ingredients>? {get; set;}
+
 }

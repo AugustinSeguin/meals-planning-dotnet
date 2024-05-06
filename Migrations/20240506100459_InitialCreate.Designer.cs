@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MealsPlanning.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240502143606_InitialMigrations")]
-    partial class InitialMigrations
+    [Migration("20240506100459_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace MealsPlanning.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("MealsPlanning.Models.Ingredients.Ingredients", b =>
+            modelBuilder.Entity("MealsPlanning.Models.Ingredient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,22 +32,15 @@ namespace MealsPlanning.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Level")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<int>("NbMeals")
-                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
                     b.ToTable("Ingredients");
                 });
 
-            modelBuilder.Entity("MealsPlanning.Models.Recipes.Recipes", b =>
+            modelBuilder.Entity("MealsPlanning.Models.Recipe", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

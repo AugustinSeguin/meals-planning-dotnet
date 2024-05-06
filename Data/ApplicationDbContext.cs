@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using MealsPlanning.Models.Ingredients;
-using MealsPlanning.Models.Recipes;
+using MealsPlanning.Models;
 
 namespace MealsPlanning.Data
 {
@@ -11,7 +10,7 @@ namespace MealsPlanning.Data
             : base(options)
         {
         }
-        public DbSet<Recipes> Recipes { get; set; }
-        public DbSet<Ingredients> Ingredients { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
     }
 }

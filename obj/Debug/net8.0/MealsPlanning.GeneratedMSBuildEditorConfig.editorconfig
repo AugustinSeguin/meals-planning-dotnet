@@ -9,39 +9,63 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MealsPlanning
 build_property.RootNamespace = MealsPlanning
-build_property.ProjectDir = /home/loustic/devspace/workspace/dotnet/MealsPlanning/
+build_property.ProjectDir = /home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/loustic/devspace/workspace/dotnet/MealsPlanning
+build_property.MSBuildProjectDirectory = /home/loustic/devspace/workspace/dotnet/meals-planning-dotnet
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/loustic/devspace/workspace/dotnet/MealsPlanning/Pages/Error.cshtml]
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Areas/Ingredients/Pages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSW5ncmVkaWVudHMvUGFnZXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Areas/Ingredients/Pages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSW5ncmVkaWVudHMvUGFnZXMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Areas/Ingredients/Pages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSW5ncmVkaWVudHMvUGFnZXMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Areas/Ingredients/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSW5ncmVkaWVudHMvUGFnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Areas/Ingredients/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSW5ncmVkaWVudHMvUGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Areas/Ingredients/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSW5ncmVkaWVudHMvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/loustic/devspace/workspace/dotnet/MealsPlanning/Pages/Index.cshtml]
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/loustic/devspace/workspace/dotnet/MealsPlanning/Pages/Privacy.cshtml]
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/loustic/devspace/workspace/dotnet/MealsPlanning/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/loustic/devspace/workspace/dotnet/MealsPlanning/Pages/_ViewImports.cshtml]
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/loustic/devspace/workspace/dotnet/MealsPlanning/Pages/_ViewStart.cshtml]
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/loustic/devspace/workspace/dotnet/MealsPlanning/Pages/Shared/_Layout.cshtml]
+[/home/loustic/devspace/workspace/dotnet/meals-planning-dotnet/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6px0wbo917

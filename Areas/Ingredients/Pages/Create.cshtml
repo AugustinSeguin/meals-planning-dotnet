@@ -1,0 +1,29 @@
+@page
+@model MealsPlanning.Areas.Ingredients.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ingredient</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+
+            <div class="form-group">
+                <label asp-for="@Model.Ingredient.Name" class="control-label"></label>
+                <input asp-for="@Model.Ingredient.Name" class="form-control" />
+                <span asp-validation-for="@Model.Ingredient.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-2">
+                <input type="submit" value="Créer" class="btn btn-primary" />
+                <a class="btn btn-success" asp-page="Index">Retour à la liste</a>
+            </div>
+
+        </form>
+    </div>
+</div>
