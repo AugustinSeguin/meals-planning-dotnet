@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MealsPlanning.Data;
 using MealsPlanning.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MealsPlanning.Areas.Recipes.Pages
 {
@@ -10,14 +11,10 @@ namespace MealsPlanning.Areas.Recipes.Pages
     {
         private readonly ApplicationDbContext ctx;
 
+
         public CreateModel(ApplicationDbContext ctx)
         {
             this.ctx = ctx;
-        }
-
-        public IActionResult OnGet()
-        {
-            return Page();
         }
 
         [BindProperty]
@@ -25,6 +22,13 @@ namespace MealsPlanning.Areas.Recipes.Pages
         {
             Name = "Name"
         };
+        public IList<Ingredient> Ingredients { get; private set; }
+
+        public async Task<IActionResult> OnGetAsync()
+        {
+            Ingredients = await ctx.Ingredients.AsNoTracking().ToListAsync();
+            return Page();
+        }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -41,6 +45,30 @@ namespace MealsPlanning.Areas.Recipes.Pages
                 return RedirectToPage("./Index");
             }
 
+            return Page();
+        }
+
+        public async Task<IActionResult> DeleteRecipeIngredient(int id)
+        {
+            RecipeIngredient recipeIngredients = await ctx.RecipeIngredients.FindAsync(id);
+
+            if (recipeIngredients != null)
+            {
+                ctx.RecipeIngredients.Remove(recipeIngredients);
+                await ctx.SaveChangesAsync();
+            }
+            return Page();
+        }
+
+        public async Task<IActionResult> AddRecipeIngredient(int id)
+        {
+            RecipeIngredient recipeIngredients = new RecipeIngredient
+            {
+                Recipe = Recipe,
+                Ingredient = Ingredients.FirstOrDefault(i => i.Id == id)
+            };
+            ctx.RecipeIngredients.Add(recipeIngredients);
+            await ctx.SaveChangesAsync();
             return Page();
         }
     }

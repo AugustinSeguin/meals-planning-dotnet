@@ -36,22 +36,36 @@
                 <span asp-validation-for="@Model.Recipe.Level" class="text-danger"></span>
             </div>
 
-            @* <div class="form-group">
-                <label asp-for="@Model.Recipe.RecipeIngredient" class="control-label">Ingredients</label>
-                <select name="pets" id="pet-select">
-                    <option value="">--Choisissez une option--</option>
-                    <option value="1">Facile</option>
-                    <option value="2">Moyen</option>
-                    <option value="3">Difficile</option>
-                </select>
-                <span asp-validation-for="@Model.Recipe.RecipeIngredient" class="text-danger"></span>
-            </div> *@
-
             <div class="form-group">
                 <label asp-for="@Model.Recipe.NbMeals" class="control-label"></label>
                 <input type="number" id="tentacles" asp-for="@Model.Recipe.NbMeals" value="1" min="1" max="10" />
                 <span asp-validation-for="@Model.Recipe.NbMeals" class="text-danger"></span>
             </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Ajouter un ingrédient
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Ingredients)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+
+                            <td>
+                                <a asp-action="Add" asp-route-id="@item.Id">Ajouter</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
 
             <div class="form-group mt-2">
                 <input type="submit" value="Créer" class="btn btn-primary" />
